@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LF5-un-QVh">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="LY1-mk-w5D">
+            <objects>
+                <tabBarController id="LF5-un-QVh" customClass="TabBarController" customModule="ContentRecommendations" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HYO-KK-Fmp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Qks-sU-bnC" kind="relationship" relationship="viewControllers" id="sHM-97-FtK"/>
+                        <segue destination="Z9U-Fx-h3y" kind="relationship" relationship="viewControllers" id="8Hp-r9-ljz"/>
+                        <segue destination="7lY-8G-mk5" kind="relationship" relationship="viewControllers" id="awg-B8-Yik"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9xk-ox-VqU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1471" y="-502"/>
+        </scene>
+        <!--Movies-->
+        <scene sceneID="WPq-sg-6m0">
+            <objects>
+                <collectionViewController id="Qks-sU-bnC" customClass="AllMoviesCollectionViewController" customModule="ContentRecommendations" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="gpQ-Aq-j3z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1yg-zn-lhO">
+                            <size key="itemSize" width="200" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCell" id="Rv9-nh-cj9" customClass="MovieCell" customModule="ContentRecommendations" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hFf-Fc-MXt">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="264" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9y-Sb-ppw">
+                                            <rect key="frame" x="41.5" y="17" width="33" height="16"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1H-Yr-JhR">
+                                            <rect key="frame" x="8" y="14" width="25.5" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="2WM-Gk-lEe"/>
+                                                <constraint firstAttribute="width" constant="25.5" id="Ong-pL-haL"/>
+                                            </constraints>
+                                            <color key="tintColor" systemColor="systemOrangeColor"/>
+                                            <state key="normal">
+                                                <imageReference key="image" image="heart" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </state>
+                                            <state key="selected" image="heart.fill" catalog="system"/>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="K9y-Sb-ppw" firstAttribute="centerY" secondItem="hFf-Fc-MXt" secondAttribute="centerY" id="Noz-Uw-m2S"/>
+                                        <constraint firstItem="d1H-Yr-JhR" firstAttribute="centerY" secondItem="K9y-Sb-ppw" secondAttribute="centerY" id="NwV-go-jIk"/>
+                                        <constraint firstItem="K9y-Sb-ppw" firstAttribute="leading" secondItem="d1H-Yr-JhR" secondAttribute="trailing" constant="8" id="RXA-pR-f0a"/>
+                                        <constraint firstItem="d1H-Yr-JhR" firstAttribute="leading" secondItem="hFf-Fc-MXt" secondAttribute="leading" constant="8" id="UVJ-Gq-vpL"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="LikeButton" destination="d1H-Yr-JhR" id="TKP-Vh-Ejh"/>
+                                    <outlet property="MovieLabel" destination="K9y-Sb-ppw" id="dQ4-VM-v8u"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Qks-sU-bnC" id="udk-Qh-qh8"/>
+                            <outlet property="delegate" destination="Qks-sU-bnC" id="mxE-rc-NmN"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Movies" image="film" catalog="system" id="uA8-uV-AY5"/>
+                    <navigationItem key="navigationItem" id="nzk-Dd-qH9"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mlM-2B-XNT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="614.49275362318849" y="61.607142857142854"/>
+        </scene>
+        <!--Recommendations-->
+        <scene sceneID="Iua-KE-G8w">
+            <objects>
+                <tableViewController id="7lY-8G-mk5" customClass="RecommendationsViewController" customModule="ContentRecommendations" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VlD-30-Jy7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecommendationCell" id="TjW-Og-Yf1">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TjW-Og-Yf1" id="Zcz-50-9EO">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7lY-8G-mk5" id="EGM-rS-yl9"/>
+                            <outlet property="delegate" destination="7lY-8G-mk5" id="D9g-zF-fyy"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Recommendations" image="lightbulb" catalog="system" id="xJS-gD-9cQ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zrV-Ti-Dd4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-293" y="-731"/>
+        </scene>
+        <!--Liked-->
+        <scene sceneID="4WX-YK-To5">
+            <objects>
+                <collectionViewController id="Z9U-Fx-h3y" userLabel="Liked" customClass="LikedMoviesCollectionViewController" customModule="ContentRecommendations" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Mub-lp-Tyn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="u3D-H6-A8b">
+                            <size key="itemSize" width="200" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCell" id="9qE-WQ-Vbe" customClass="MovieCell" customModule="ContentRecommendations" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="c3y-Ha-m1V">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="264" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdx-oj-YSQ">
+                                            <rect key="frame" x="41.5" y="17" width="33" height="16"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1L-fx-ORa">
+                                            <rect key="frame" x="8" y="14" width="25.5" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="uUj-14-xZz"/>
+                                                <constraint firstAttribute="width" constant="25.5" id="zeb-WT-Ff1"/>
+                                            </constraints>
+                                            <color key="tintColor" systemColor="systemOrangeColor"/>
+                                            <state key="normal">
+                                                <imageReference key="image" image="heart" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </state>
+                                            <state key="selected" image="heart.fill" catalog="system"/>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="Rdx-oj-YSQ" firstAttribute="leading" secondItem="g1L-fx-ORa" secondAttribute="trailing" constant="8" id="2VS-51-Nhq"/>
+                                        <constraint firstItem="g1L-fx-ORa" firstAttribute="centerY" secondItem="Rdx-oj-YSQ" secondAttribute="centerY" id="BjA-Fv-Maw"/>
+                                        <constraint firstItem="g1L-fx-ORa" firstAttribute="leading" secondItem="c3y-Ha-m1V" secondAttribute="leading" constant="8" id="Jue-vt-Iyq"/>
+                                        <constraint firstItem="Rdx-oj-YSQ" firstAttribute="centerY" secondItem="c3y-Ha-m1V" secondAttribute="centerY" id="aab-QF-EOS"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="LikeButton" destination="g1L-fx-ORa" id="3ge-os-9mw"/>
+                                    <outlet property="MovieLabel" destination="Rdx-oj-YSQ" id="cU5-Lo-EFn"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Z9U-Fx-h3y" id="na1-Xn-PnQ"/>
+                            <outlet property="delegate" destination="Z9U-Fx-h3y" id="UcG-hd-580"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Liked" image="heart.circle" catalog="system" id="QqX-l7-Dwt"/>
+                    <navigationItem key="navigationItem" id="U7Z-C5-5yE"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wbd-wW-Zsf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1258" y="489"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="film" catalog="system" width="128" height="93"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="heart.circle" catalog="system" width="128" height="121"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="lightbulb" catalog="system" width="113" height="128"/>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,10 @@
+platform :ios, '12.0'
+use_frameworks!
+
+target 'ContentRecommendations' do
+end
+
+pod 'Firebase/Analytics'
+pod 'Firebase/MLCommon'
+pod 'Firebase/MLModelInterpreter'
+pod 'TensorFlowLiteSwift'
