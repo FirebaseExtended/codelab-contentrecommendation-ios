@@ -4,7 +4,6 @@ use_frameworks!
 target 'ContentRecommendations' do
 end
 
-pod 'Firebase/Analytics'
-pod 'Firebase/MLCommon'
-pod 'Firebase/MLModelInterpreter'
+pod 'FirebaseAnalytics'
+pod 'FirebaseMLModelDownloader', '9.3.0-beta'
 pod 'TensorFlowLiteSwift'

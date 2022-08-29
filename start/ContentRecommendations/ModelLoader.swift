@@ -14,7 +14,7 @@
 
 import UIKit
 
-class ModelDownloader {
+class ModelLoader {
 
   // Since ML uses global notifications we can't allow multiple downloads simultaneously.
   private static var success: NSObjectProtocol? {
@@ -32,30 +32,19 @@ class ModelDownloader {
     }
   }
 
-  // TODO: Implement ModelDownloader methods
+  // TODO: Implement ModelLoader methods
 
   enum DownloadError: Error {
 
-    // The download couldn't be initialized because Firebase has not been configured
-    case firebaseNotInitialized
+      // The download couldn't be initialized because Firebase has not been configured
+      case firebaseNotInitialized
 
-    // The download couldn't be initialized because a download is already in progress
-    case downloadInProgress
+      // The download couldn't be initialized because a download is already in progress
+      case downloadInProgress
 
-    // The download returned without a valid remote model
-    case downloadReturnedEmptyModel
-
-    // The download completed with a different model name than the one specified
-    case downloadReturnedWrongModel
-
-    // MLKit-generated error
-    case mlkitError(underlyingError: Error)
-
-    // MLKit did not return an error
-    case unknownError
-  }
+      // An error occurred while downloading the model
+      case downloadFailed(underlyingError: Error)
+    }
 
     // DOWNLOAD MODEL HERE
-
-    // FETCH MODEL HERE
 }
