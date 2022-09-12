@@ -23,15 +23,16 @@ class RecommendationsViewController: UITableViewController {
   func loadModel() {
     // Download the model from Firebase
     print("Fetching recommendations model...")
-    ModelDownloader.fetchModel(named: "recommendations") { (filePath, error) in
-      guard let path = filePath else {
+    ModelLoader.downloadModel(named: "recommendations") { (customModel, error) in
+      guard let customModel = customModel else {
         if let error = error {
           print(error)
         }
         return
       }
+
       print("Recommendations model download complete")
-      self.loadInterpreter(path: path)
+      self.loadInterpreter(path: customModel.path)
     }
   }
 
